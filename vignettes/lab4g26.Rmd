@@ -1,0 +1,66 @@
+---
+title: "linreg"
+author: "mubarak Hussain"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{linreg}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+# Description
+
+ lab4 group 26.
+
+# Import
+
+```{r}
+    library(lab4g26)
+```
+
+# Methods
+
+To start with, we can use the initialize method to input formula and data
+
+```{r}
+example <- linreg(formula = Petal.Length~Species, data = iris)
+```
+
+The `print()` method can print out the coefficients and coefficient names.
+
+```{r}
+example$print()
+```
+
+The `plot()` method can plot the following two plots using such packages as `ggplot2`, `gird` and `gridExtra`.
+
+```{r}
+example$plot()
+```
+
+The `resid()` method can return the vector of residuals.
+
+```{r}
+head(example$resid())
+```
+
+The `pred()` method can return the predicted values.
+
+```{r}
+head(example$pred())
+```
+
+The `coef()` method can return the coefficients as a named vector.
+
+```{r}
+example$coef()
+```
+
+The `summary()` method can present the coefficients with their standard error, t-value and p-value as well as the estimate of ˆσ and the degrees of freedom in linear regression model.
+
+```{r}
+example$summary()
+```
+
+
+
